@@ -21,7 +21,7 @@
   maptypes="mapq3"
   shaders="quake3"
   entityclass="quake3"
-  entityclasstype="ent"
+  entityclasstype="xml"
   entities="quake3"
   brushtypes="quake3"
   patchtypes="quake3"
