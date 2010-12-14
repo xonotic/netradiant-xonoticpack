@@ -90,5 +90,19 @@ build commands
 <command>[q3map2] -light -randomsamples -samples 4 -lightmapsize 512 -bounce 8 -fastbounce -bouncegrid -dirty -dirtscale 2 "[MapFile]"</command>
 <command>[q3map2] -minimap "[MapFile]"</command>
 </build>
+<build name="Q3Map2: convert to .ASE for modelling apps">
+<command>[q3map2] -meta -v -patchmeta "[MapFile]"</command>
+<command>[q3map2] -convert -format ase "[BspFile]"</command>
+</build>
+<build name="Q3Map2: convert to .ASE for mapping">
+<command>[q3map2] -meta -v -patchmeta "[MapFile]"</command>
+<command>[q3map2] -convert -format ase -shadersasbitmap "[BspFile]"</command>
+</build>
+<build name="Q3Map2: convert to .ASE for modelling apps (quick and dirty)">
+<command>[q3map2] -convert -format ase -patchmeta "[MapFile]"</command>
+</build>
+<build name="Q3Map2: convert to .ASE for mapping (quick and dirty)">
+<command>[q3map2] -convert -format ase -patchmeta -shadersasbitmap "[MapFile]"</command>
+</build>
 </project>
 
