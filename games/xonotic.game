@@ -26,7 +26,7 @@
   brushtypes="quake3"
   patchtypes="quake3"
   default_scale="0.25"
-  forbidden_paths="xonotic-data.pk3 xonotic-data.pk3dir xonotic-nexcompat.pk3 xonotic-nexcompat.pk3dir"
+  forbidden_paths="xonotic-rsync-nexcompat-high.pk3 xonotic-rsync-nexcompat.pk3 xonotic-nexcompat.pk3dir"
   q3map2_type="xonotic"
   brush_primit="1"
 />
