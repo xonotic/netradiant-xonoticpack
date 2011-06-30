@@ -1,4 +1,2 @@
 xonotic.game/data/entities.def	http://git.xonotic.org/?p=xonotic/xonotic-maps.pk3dir.git;a=blob_plain;f=scripts/entities.def
-xonotic.game/data/turrets.def	http://git.xonotic.org/?p=xonotic/xonotic-maps.pk3dir.git;a=blob_plain;f=scripts/turrets.def
 xonotic.game/data/entities.ent	http://git.xonotic.org/?p=xonotic/xonotic-maps.pk3dir.git;a=blob_plain;f=scripts/entities.ent
-xonotic.game/data/turrets.ent	http://git.xonotic.org/?p=xonotic/xonotic-maps.pk3dir.git;a=blob_plain;f=scripts/turrets.ent
