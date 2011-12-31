@@ -42,52 +42,28 @@ build commands
 <command>[q3map2] -vis -saveprt "[MapFile]"</command>
 <command>[q3map2] -light -fast "[MapFile]"</command>
 </build>
-<build name="Q3Map2: (final) + fast + nobounce (Xonotic approved)">
-<command>[q3map2] -meta -v -samplesize 8 -minsamplesize 4 "[MapFile]"</command>
+<build name="Q3Map2: (final) (Xonotic default)">
+<command>[q3map2] -meta -v -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
 <command>[q3map2] -vis -saveprt "[MapFile]"</command>
-<command>[q3map2] -light -fast -randomsamples -samples 4 -lightmapsize 512 "[MapFile]"</command>
+<command>[q3map2] -light -lightmapsearchpower 3 -deluxe -patchshadows -randomsamples -samples 4 -lightmapsize 512 -fast -fastbounce -dirty -bouncegrid -fill "[MapFile]"</command>
 <command>[q3map2] -minimap "[MapFile]"</command>
 </build>
-<build name="Q3Map2: (final) + fast + ambient occlusion + nobounce (Xonotic approved)">
-<command>[q3map2] -meta -v -samplesize 8 -minsamplesize 4 "[MapFile]"</command>
+<build name="Q3Map2: (final) '-light + -dirtscale 2' (Xonotic approved)">
+<command>[q3map2] -meta -v -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
 <command>[q3map2] -vis -saveprt "[MapFile]"</command>
-<command>[q3map2] -light -fast -randomsamples -samples 4 -lightmapsize 512 -dirty -dirtscale 2 "[MapFile]"</command>
+<command>[q3map2] -light -lightmapsearchpower 3 -deluxe -patchshadows -randomsamples -samples 4 -lightmapsize 512 -fast -fastbounce -dirty -bouncegrid -fill -dirtscale 2 "[MapFile]"</command>
 <command>[q3map2] -minimap "[MapFile]"</command>
 </build>
-<build name="Q3Map2: (final) + fast (Xonotic approved)">
-<command>[q3map2] -meta -v -samplesize 8 -minsamplesize 4 "[MapFile]"</command>
+<build name="Q3Map2: (final) '-light + -bounce 8' (Xonotic approved)">
+<command>[q3map2] -meta -v -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
 <command>[q3map2] -vis -saveprt "[MapFile]"</command>
-<command>[q3map2] -light -fast -randomsamples -samples 4 -lightmapsize 512 -bounce 8 -fastbounce -bouncegrid "[MapFile]"</command>
+<command>[q3map2] -light -lightmapsearchpower 3 -deluxe -patchshadows -randomsamples -samples 4 -lightmapsize 512 -fast -fastbounce -dirty -bouncegrid -fill -bounce 8 "[MapFile]"</command>
 <command>[q3map2] -minimap "[MapFile]"</command>
 </build>
-<build name="Q3Map2: (final) + fast + ambient occlusion (Xonotic approved)">
-<command>[q3map2] -meta -v -samplesize 8 -minsamplesize 4 "[MapFile]"</command>
+<build name="Q3Map2: (final) '-light + -bounce 8 -dirtscale 2' (Xonotic approved)">
+<command>[q3map2] -meta -v -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
 <command>[q3map2] -vis -saveprt "[MapFile]"</command>
-<command>[q3map2] -light -fast -randomsamples -samples 4 -lightmapsize 512 -bounce 8 -fastbounce -bouncegrid -dirty -dirtscale 2 "[MapFile]"</command>
-<command>[q3map2] -minimap "[MapFile]"</command>
-</build>
-<build name="Q3Map2: (final) + nobounce (Xonotic approved)">
-<command>[q3map2] -meta -v -samplesize 8 -minsamplesize 4 "[MapFile]"</command>
-<command>[q3map2] -vis -saveprt "[MapFile]"</command>
-<command>[q3map2] -light -randomsamples -samples 4 -lightmapsize 512 "[MapFile]"</command>
-<command>[q3map2] -minimap "[MapFile]"</command>
-</build>
-<build name="Q3Map2: (final) + nobounce + ambient occlusion (Xonotic approved)">
-<command>[q3map2] -meta -v -samplesize 8 -minsamplesize 4 "[MapFile]"</command>
-<command>[q3map2] -vis -saveprt "[MapFile]"</command>
-<command>[q3map2] -light -randomsamples -samples 4 -lightmapsize 512 -dirty -dirtscale 2 "[MapFile]"</command>
-<command>[q3map2] -minimap "[MapFile]"</command>
-</build>
-<build name="Q3Map2: (final) (Xonotic approved and RECOMMENDED)">
-<command>[q3map2] -meta -v -samplesize 8 -minsamplesize 4 "[MapFile]"</command>
-<command>[q3map2] -vis -saveprt "[MapFile]"</command>
-<command>[q3map2] -light -randomsamples -samples 4 -lightmapsize 512 -bounce 8 -fastbounce -bouncegrid "[MapFile]"</command>
-<command>[q3map2] -minimap "[MapFile]"</command>
-</build>
-<build name="Q3Map2: (final) + ambient occlusion (Xonotic approved)">
-<command>[q3map2] -meta -v -samplesize 8 -minsamplesize 4 "[MapFile]"</command>
-<command>[q3map2] -vis -saveprt "[MapFile]"</command>
-<command>[q3map2] -light -randomsamples -samples 4 -lightmapsize 512 -bounce 8 -fastbounce -bouncegrid -dirty -dirtscale 2 "[MapFile]"</command>
+<command>[q3map2] -light -lightmapsearchpower 3 -deluxe -patchshadows -randomsamples -samples 4 -lightmapsize 512 -fast -fastbounce -dirty -bouncegrid -fill -bounce 8 -dirtscale 2 "[MapFile]"</command>
 <command>[q3map2] -minimap "[MapFile]"</command>
 </build>
 <build name="Q3Map2: convert to .ASE for modelling apps">
@@ -103,6 +79,38 @@ build commands
 </build>
 <build name="Q3Map2: convert to .ASE for mapping (quick and dirty)">
 <command>[q3map2] -convert -format ase -patchmeta -shadersasbitmap "[MapFile]"</command>
+</build>
+<build name="Q3Map2: (single) -light medium (OLD LIGHTING)">
+<command>[q3map2] -light -nosRGB -fast "[MapFile]"</command>
+</build>
+<build name="Q3Map2: (test) BSP, -vis, -light -nosRGB medium (OLD LIGHTING)">
+<command>[q3map2] -meta -nosRGB -v "[MapFile]"</command>
+<command>[q3map2] -vis -saveprt "[MapFile]"</command>
+<command>[q3map2] -light -nosRGB -fast "[MapFile]"</command>
+</build>
+<build name="Q3Map2: (final) '-nosRGB' (OLD LIGHTING)">
+<command>[q3map2] -meta -v -nosRGB -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
+<command>[q3map2] -vis -saveprt "[MapFile]"</command>
+<command>[q3map2] -light -nosRGB -lightmapsearchpower 3 -deluxe -patchshadows -randomsamples -samples 4 -lightmapsize 512 -fast -fastbounce -dirty -bouncegrid -fill "[MapFile]"</command>
+<command>[q3map2] -minimap "[MapFile]"</command>
+</build>
+<build name="Q3Map2: (final) '-nosRGB -light + -dirtscale 2' (OLD LIGHTING)">
+<command>[q3map2] -meta -v -nosRGB -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
+<command>[q3map2] -vis -saveprt "[MapFile]"</command>
+<command>[q3map2] -light -nosRGB -lightmapsearchpower 3 -deluxe -patchshadows -randomsamples -samples 4 -lightmapsize 512 -fast -fastbounce -dirty -bouncegrid -fill -dirtscale 2 "[MapFile]"</command>
+<command>[q3map2] -minimap "[MapFile]"</command>
+</build>
+<build name="Q3Map2: (final) '-nosRGB -light + -bounce 8' (OLD LIGHTING)">
+<command>[q3map2] -meta -v -nosRGB -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
+<command>[q3map2] -vis -saveprt "[MapFile]"</command>
+<command>[q3map2] -light -nosRGB -lightmapsearchpower 3 -deluxe -patchshadows -randomsamples -samples 4 -lightmapsize 512 -fast -fastbounce -dirty -bouncegrid -fill -bounce 8 "[MapFile]"</command>
+<command>[q3map2] -minimap "[MapFile]"</command>
+</build>
+<build name="Q3Map2: (final) '-nosRGB -light + -bounce 8 -dirtscale 2' (OLD LIGHTING)">
+<command>[q3map2] -meta -v -nosRGB -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
+<command>[q3map2] -vis -saveprt "[MapFile]"</command>
+<command>[q3map2] -light -nosRGB -lightmapsearchpower 3 -deluxe -patchshadows -randomsamples -samples 4 -lightmapsize 512 -fast -fastbounce -dirty -bouncegrid -fill -bounce 8 -dirtscale 2 "[MapFile]"</command>
+<command>[q3map2] -minimap "[MapFile]"</command>
 </build>
 </project>
 
