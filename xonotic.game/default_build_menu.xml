@@ -66,24 +66,10 @@ build commands
 <command>[q3map2] -light -lightmapsearchpower 3 -deluxe -patchshadows -randomsamples -samples 4 -lightmapsize 512 -fast -fastbounce -dirty -bouncegrid -fill -bounce 8 -dirtscale 2 "[MapFile]"</command>
 <command>[q3map2] -minimap "[MapFile]"</command>
 </build>
-<build name="Q3Map2: convert to .ASE for modelling apps">
-<command>[q3map2] -meta -v -patchmeta "[MapFile]"</command>
-<command>[q3map2] -convert -format ase "[BspFile]"</command>
-</build>
-<build name="Q3Map2: convert to .ASE for mapping">
-<command>[q3map2] -meta -v -patchmeta "[MapFile]"</command>
-<command>[q3map2] -convert -format ase -shadersasbitmap "[BspFile]"</command>
-</build>
-<build name="Q3Map2: convert to .ASE for modelling apps (quick and dirty)">
-<command>[q3map2] -convert -format ase -patchmeta "[MapFile]"</command>
-</build>
-<build name="Q3Map2: convert to .ASE for mapping (quick and dirty)">
-<command>[q3map2] -convert -format ase -patchmeta -shadersasbitmap "[MapFile]"</command>
-</build>
-<build name="Q3Map2: (single) -light medium (OLD LIGHTING)">
+<build name="Q3Map2: (single) -light '-nosRGB' medium (OLD LIGHTING)">
 <command>[q3map2] -light -nosRGB -fast "[MapFile]"</command>
 </build>
-<build name="Q3Map2: (test) BSP, -vis, -light -nosRGB medium (OLD LIGHTING)">
+<build name="Q3Map2: (test) BSP, -vis, -light '-nosRGB' medium (OLD LIGHTING)">
 <command>[q3map2] -meta -nosRGB -v "[MapFile]"</command>
 <command>[q3map2] -vis -saveprt "[MapFile]"</command>
 <command>[q3map2] -light -nosRGB -fast "[MapFile]"</command>
@@ -111,6 +97,20 @@ build commands
 <command>[q3map2] -vis -saveprt "[MapFile]"</command>
 <command>[q3map2] -light -nosRGB -lightmapsearchpower 3 -deluxe -patchshadows -randomsamples -samples 4 -lightmapsize 512 -fast -fastbounce -dirty -bouncegrid -fill -bounce 8 -dirtscale 2 "[MapFile]"</command>
 <command>[q3map2] -minimap "[MapFile]"</command>
+</build>
+<build name="Q3Map2: convert to .ASE for modelling apps">
+<command>[q3map2] -meta -v -patchmeta "[MapFile]"</command>
+<command>[q3map2] -convert -format ase "[BspFile]"</command>
+</build>
+<build name="Q3Map2: convert to .ASE for mapping">
+<command>[q3map2] -meta -v -patchmeta "[MapFile]"</command>
+<command>[q3map2] -convert -format ase -shadersasbitmap "[BspFile]"</command>
+</build>
+<build name="Q3Map2: convert to .ASE for modelling apps (quick and dirty)">
+<command>[q3map2] -convert -format ase -patchmeta "[MapFile]"</command>
+</build>
+<build name="Q3Map2: convert to .ASE for mapping (quick and dirty)">
+<command>[q3map2] -convert -format ase -patchmeta -shadersasbitmap "[MapFile]"</command>
 </build>
 </project>
 
