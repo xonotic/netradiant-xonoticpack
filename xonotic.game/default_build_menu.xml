@@ -70,6 +70,21 @@ build commands
 <command>[q3map2] -minimap "[MapFile]"</command>
 </build>
 <separator />
+<build name="convert to .OBJ for modelling apps">
+<command>[q3map2] -meta -v -patchmeta "[MapFile]"</command>
+<command>[q3map2] -convert -format obj "[BspFile]"</command>
+</build>
+<build name="convert to .OBJ for mapping">
+<command>[q3map2] -meta -v -patchmeta "[MapFile]"</command>
+<command>[q3map2] -convert -format obj -shadersasbitmap "[BspFile]"</command>
+</build>
+<build name="convert to .OBJ for modelling apps (quick and dirty)">
+<command>[q3map2] -convert -format obj -patchmeta "[MapFile]"</command>
+</build>
+<build name="convert to .OBJ for mapping (quick and dirty)">
+<command>[q3map2] -convert -format obj -patchmeta -shadersasbitmap "[MapFile]"</command>
+</build>
+<separator />
 <build name="convert to .ASE for modelling apps">
 <command>[q3map2] -meta -v -patchmeta "[MapFile]"</command>
 <command>[q3map2] -convert -format ase "[BspFile]"</command>
