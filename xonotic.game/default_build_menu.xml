@@ -5,7 +5,7 @@
 <command>[q3map2] -meta -keepLights -v &quot;[MapFile]&quot;</command>
 </build>
 <build name="Single: -vis -fast">
-<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -fast -saveprt &quot;[MapFile]&quot;</command>
 </build>
 <build name="Single: -vis">
 <command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
