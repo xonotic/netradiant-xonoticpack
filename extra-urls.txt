@@ -1,1 +1,1 @@
-xonotic.game/data/entities.ent	http://git.xonotic.org/?p=xonotic/xonotic-maps.pk3dir.git;a=blob_plain;f=scripts/entities.ent
+xonotic.game/data/entities.ent	https://gitlab.com/xonotic/xonotic-maps.pk3dir/-/raw/master/scripts/entities.ent
