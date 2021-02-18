@@ -16,7 +16,7 @@
   unknowngamename="Custom Xonotic modification"
   shaderpath="scripts"
   archivetypes="pk3"
-  texturetypes="tga jpg png"
+  texturetypes="tga jpg png dds"
   modeltypes="md3 mdl md2 ase obj"
   maptypes="mapq3"
   shaders="quake3"
