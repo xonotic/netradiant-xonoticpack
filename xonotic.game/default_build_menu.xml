@@ -47,7 +47,7 @@
 </build>
 <separator/>
 <build name="Compile and convert to .obj (optimized)">
-<command>[q3map2] -bsp -meta -keeplights -patchmeta &quot;[MapFile]&quot;</command>
+<command>[q3map2] -bsp -meta -patchmeta &quot;[MapFile]&quot;</command>
 <command>[q3map2] -convert -format obj &quot;[BspFile]&quot;</command>
 </build>
 <build name="Convert to .obj (fast)">
@@ -55,11 +55,11 @@
 </build>
 <separator/>
 <build name="Compile and convert to .ase for modelling applications (optimized)">
-<command>[q3map2] -bsp -meta -keeplights -patchmeta &quot;[MapFile]&quot;</command>
+<command>[q3map2] -bsp -meta -patchmeta &quot;[MapFile]&quot;</command>
 <command>[q3map2] -convert -format ase &quot;[BspFile]&quot;</command>
 </build>
 <build name="Compile and convert to .ase for mapping (optimized)">
-<command>[q3map2] -bsp -meta -keeplights -patchmeta &quot;[MapFile]&quot;</command>
+<command>[q3map2] -bsp -meta -patchmeta &quot;[MapFile]&quot;</command>
 <command>[q3map2] -convert -format ase -shadersasbitmap &quot;[BspFile]&quot;</command>
 </build>
 <build name="Convert to .ase for modelling applications (fast)">
