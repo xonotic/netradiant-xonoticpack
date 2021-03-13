@@ -46,26 +46,33 @@
   <command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -fastlightmapsearch -deluxe -patchshadows -samples 4 -randomsamples -bounce 8 -bouncescale 2 -fastbounce -bouncegrid -nobouncestore -dirty -dirtdepth 64 -dirtscale 0.8 -fill "[MapFile]"</command>
 </build>
 <separator/>
-<build name="Compile and convert to .obj (optimized)">
-<command>[q3map2] -bsp -meta -patchmeta &quot;[MapFile]&quot;</command>
-<command>[q3map2] -convert -format obj &quot;[BspFile]&quot;</command>
+<build name="Convert .map to .obj model">
+  <command>[q3map2] -convert -format obj -patchmeta -readmap "[MapFile]"</command>
 </build>
-<build name="Convert to .obj (fast)">
-<command>[q3map2] -convert -format obj -patchmeta -readmap &quot;[MapFile]&quot;</command>
+<build name="Convert .map to .obj model: -subdivisions 4 (more tris)">
+  <command>[q3map2] -convert -format obj -patchmeta -subdivisions 4 -readmap "[MapFile]"</command>
+</build>
+<build name="Convert .map to .ase model">
+  <command>[q3map2] -convert -format ase -patchmeta -readmap "[MapFile]"</command>
+</build>
+<build name="Convert .map to .ase model: -subdivisions 4 (more tris)">
+  <command>[q3map2] -convert -format ase -patchmeta -subdivisions 4 -readmap "[MapFile]"</command>
 </build>
 <separator/>
-<build name="Compile and convert to .ase for modelling applications (optimized)">
-<command>[q3map2] -bsp -meta -patchmeta &quot;[MapFile]&quot;</command>
-<command>[q3map2] -convert -format ase &quot;[BspFile]&quot;</command>
+<build name="Compile &amp; convert .bsp to .obj model (optimized)">
+  <command>[q3map2] -meta -patchmeta "[MapFile]"</command>
+  <command>[q3map2] -convert -format obj "[BspFile]"</command>
 </build>
-<build name="Compile and convert to .ase for mapping (optimized)">
-<command>[q3map2] -bsp -meta -patchmeta &quot;[MapFile]&quot;</command>
-<command>[q3map2] -convert -format ase -shadersasbitmap &quot;[BspFile]&quot;</command>
+<build name="Compile &amp; convert .bsp to .obj model: -subdivisions 4 (optimized, more tris)">
+  <command>[q3map2] -meta -patchmeta -subdivisions 4 "[MapFile]"</command>
+  <command>[q3map2] -convert -format obj "[BspFile]"</command>
 </build>
-<build name="Convert to .ase for modelling applications (fast)">
-<command>[q3map2] -convert -format ase -patchmeta -readmap &quot;[MapFile]&quot;</command>
+<build name="Compile &amp; convert .bsp to .ase model (optimized)">
+  <command>[q3map2] -meta -patchmeta "[MapFile]"</command>
+  <command>[q3map2] -convert -format ase "[BspFile]"</command>
 </build>
-<build name="Convert to .ase for mapping (fast)">
-<command>[q3map2] -convert -format ase -patchmeta -shadersasbitmap -readmap &quot;[MapFile]&quot;</command>
+<build name="Compile &amp; convert .bsp to .ase model: -subdivisions 4 (optimized, more tris)">
+  <command>[q3map2] -meta -patchmeta -subdivisions 4 "[MapFile]"</command>
+  <command>[q3map2] -convert -format ase "[BspFile]"</command>
 </build>
 </project>
