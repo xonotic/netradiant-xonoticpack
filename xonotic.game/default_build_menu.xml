@@ -1,21 +1,6 @@
 <?xml version="1.0"?>
 <project version="2.0">
 <var name="q3map2">&quot;[RadiantPath]q3map2.[ExecutableType]&quot; [ExtraQ3map2Args] -v<cond value="[MonitorAddress]"> -connect [MonitorAddress]</cond> -game xonotic -fs_basepath &quot;[EnginePath]&quot; -fs_homepath &quot;[UserEnginePath]&quot;<cond value="[GameName]"> -fs_game [GameName]</cond></var>
-<build name="Single: bsp">
-<command>[q3map2] -bsp -meta -keeplights &quot;[MapFile]&quot;</command>
-</build>
-<build name="Single: vis (fast)">
-<command>[q3map2] -vis -fast -saveprt &quot;[MapFile]&quot;</command>
-</build>
-<build name="Single: vis">
-<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
-</build>
-<build name="Single: light (low)">
-<command>[q3map2] -light -cheapgrid -faster &quot;[MapFile]&quot;</command>
-</build>
-<build name="Single: light (medium)">
-<command>[q3map2] -light -fast &quot;[MapFile]&quot;</command>
-</build>
 <build name="Single: minimap">
 <command>[q3map2] -minimap &quot;[MapFile]&quot;</command>
 </build>
