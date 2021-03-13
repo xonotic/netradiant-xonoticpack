@@ -9,20 +9,20 @@
 <command>[q3map2] -onlyents &quot;[MapFile]&quot;</command>
 </build>
 <separator/>
-<build name="Test: bsp, vis (fast), light (low)">
-<command>[q3map2] -bsp -meta -keeplights &quot;[MapFile]&quot;</command>
-<command>[q3map2] -vis -fast -saveprt &quot;[MapFile]&quot;</command>
-<command>[q3map2] -light -cheapgrid -faster &quot;[MapFile]&quot;</command>
+<build name="Fast: -vis -fast (use when vis takes ages)">
+  <command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
+  <command>[q3map2] -vis -fast -saveprt "[MapFile]"</command>
+  <command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -fastlightmapsearch -deluxe -patchshadows -samples 2 -randomsamples -fill "[MapFile]"</command>
 </build>
-<build name="Test: bsp, vis, light (low)">
-<command>[q3map2] -bsp -meta -keeplights &quot;[MapFile]&quot;</command>
-<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
-<command>[q3map2] -light -cheapgrid -faster &quot;[MapFile]&quot;</command>
+<build name="Fast: -samplesize 16 (low resolution lightmaps)">
+  <command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 16 -mv 1000000 -mi 6000000 "[MapFile]"</command>
+  <command>[q3map2] -vis -saveprt "[MapFile]"</command>
+  <command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -fastlightmapsearch -deluxe -patchshadows -samples 2 -randomsamples -fill "[MapFile]"</command>
 </build>
-<build name="Test: bsp, vis, light (medium)">
-<command>[q3map2] -bsp -meta -keeplights &quot;[MapFile]&quot;</command>
-<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
-<command>[q3map2] -light -fast &quot;[MapFile]&quot;</command>
+<build name="Fast: -samplesize 8 (not so fast)">
+  <command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
+  <command>[q3map2] -vis -saveprt "[MapFile]"</command>
+  <command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -fastlightmapsearch -deluxe -patchshadows -samples 4 -randomsamples -fill "[MapFile]"</command>
 </build>
 <separator/>
 <build name="Final: bsp, vis, light (high, Xonotic approved)">
