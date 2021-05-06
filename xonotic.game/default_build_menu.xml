@@ -46,6 +46,9 @@
 <build name="Update entities in the .bsp">
   <command>[q3map2] -onlyents &quot;[MapFile]&quot;</command>
 </build>
+<build name="Export entities from .bsp">
+   <command>[q3map2] -exportents "[MapFile]"</command>
+</build>
 <separator/>
 <build name="Convert .map to .obj model">
   <command>[q3map2] -convert -format obj -patchmeta -readmap "[MapFile]"</command>
