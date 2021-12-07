@@ -1,123 +1,82 @@
 <?xml version="1.0"?>
 <project version="2.0">
 <var name="q3map2">&quot;[RadiantPath]q3map2.[ExecutableType]&quot; [ExtraQ3map2Args] -v<cond value="[MonitorAddress]"> -connect [MonitorAddress]</cond> -game xonotic -fs_basepath &quot;[EnginePath]&quot; -fs_homepath &quot;[UserEnginePath]&quot;<cond value="[GameName]"> -fs_game [GameName]</cond></var>
-<build name="Single: -bsp">
-<command>[q3map2] -bsp -meta -keeplights &quot;[MapFile]&quot;</command>
+<build name="Fast: -vis -fast (use when vis takes ages)">
+  <command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
+  <command>[q3map2] -vis -fast -saveprt "[MapFile]"</command>
+  <command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -fastallocate -deluxe -patchshadows -samples 2 -randomsamples -fill "[MapFile]"</command>
 </build>
-<build name="Single: -vis -fast">
-<command>[q3map2] -vis -fast -saveprt &quot;[MapFile]&quot;</command>
+<build name="Fast: -samplesize 16 (low resolution lightmaps)">
+  <command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 16 -mv 1000000 -mi 6000000 "[MapFile]"</command>
+  <command>[q3map2] -vis -saveprt "[MapFile]"</command>
+  <command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -fastallocate -deluxe -patchshadows -samples 2 -randomsamples -fill "[MapFile]"</command>
 </build>
-<build name="Single: -vis">
-<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
-</build>
-<build name="Single: -light low">
-<command>[q3map2] -light -cheapgrid -faster &quot;[MapFile]&quot;</command>
-</build>
-<build name="Single: -light medium">
-<command>[q3map2] -light -fast &quot;[MapFile]&quot;</command>
-</build>
-<build name="Single: -minimap">
-<command>[q3map2] -minimap &quot;[MapFile]&quot;</command>
+<build name="Fast: -samplesize 8 (not so fast)">
+  <command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
+  <command>[q3map2] -vis -saveprt "[MapFile]"</command>
+  <command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -fastallocate -deluxe -patchshadows -samples 4 -randomsamples -fill "[MapFile]"</command>
 </build>
 <separator/>
-<build name="only entities">
-<command>[q3map2] -onlyents &quot;[MapFile]&quot;</command>
+<build name="Final: -bounce 8 (new Xonotic's default)">
+  <command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
+  <command>[q3map2] -vis -saveprt "[MapFile]"</command>
+  <command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -fastallocate -deluxe -patchshadows -samples 4 -randomsamples -bounce 8 -fastbounce -bouncegrid -nobouncestore -fill "[MapFile]"</command>
 </build>
 <separator/>
-<build name="Test: -bsp, -vis -fast, -light low">
-<command>[q3map2] -bsp -meta -keeplights &quot;[MapFile]&quot;</command>
-<command>[q3map2] -vis -fast -saveprt &quot;[MapFile]&quot;</command>
-<command>[q3map2] -light -cheapgrid -faster &quot;[MapFile]&quot;</command>
+<build name="Final: -bounce 8 -dirty (darker corners)">
+  <command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
+  <command>[q3map2] -vis -saveprt "[MapFile]"</command>
+  <command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -fastallocate -deluxe -patchshadows -samples 4 -randomsamples -bounce 8 -fastbounce -bouncegrid -nobouncestore -dirty -dirtdepth 64 -dirtscale 0.8 -fill "[MapFile]"</command>
 </build>
-<build name="Test: -bsp, -vis, -light low">
-<command>[q3map2] -bsp -meta -keeplights &quot;[MapFile]&quot;</command>
-<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
-<command>[q3map2] -light -cheapgrid -faster &quot;[MapFile]&quot;</command>
+<build name="Final: -bounce 8 -bouncescale 2 (more bounced light)">
+  <command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
+  <command>[q3map2] -vis -saveprt "[MapFile]"</command>
+  <command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -fastallocate -deluxe -patchshadows -samples 4 -randomsamples -bounce 8 -bouncescale 2 -fastbounce -bouncegrid -nobouncestore -fill "[MapFile]"</command>
 </build>
-<build name="Test: -bsp, -vis, -light medium">
-<command>[q3map2] -bsp -meta -keeplights &quot;[MapFile]&quot;</command>
-<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
-<command>[q3map2] -light -fast &quot;[MapFile]&quot;</command>
-</build>
-<separator/>
-<build name="Final: (Xonotic default)">
-<command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 8 -mv 1000000 -mi 6000000 &quot;[MapFile]&quot;</command>
-<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
-<command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -deluxe -patchshadows -randomsamples -samples 4 -fast -dirty -fill &quot;[MapFile]&quot;</command>
-<command>[q3map2] -minimap &quot;[MapFile]&quot;</command>
-</build>
-<build name="Final: -light -dirtscale 2 (Xonotic approved)">
-<command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 8 -mv 1000000 -mi 6000000 &quot;[MapFile]&quot;</command>
-<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
-<command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -deluxe -patchshadows -randomsamples -samples 4 -fast -dirty -fill -dirtscale 2 &quot;[MapFile]&quot;</command>
-<command>[q3map2] -minimap &quot;[MapFile]&quot;</command>
-</build>
-<build name="Final: -light -bounce 8 (Xonotic approved)">
-<command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 8 -mv 1000000 -mi 6000000 &quot;[MapFile]&quot;</command>
-<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
-<command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -deluxe -patchshadows -randomsamples -samples 4 -fast -fastbounce -dirty -bouncegrid -fill -bounce 8 &quot;[MapFile]&quot;</command>
-<command>[q3map2] -minimap &quot;[MapFile]&quot;</command>
-</build>
-<build name="Final: -light -bounce 8 -dirtscale 2 (Xonotic approved)">
-<command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 8 -mv 1000000 -mi 6000000 &quot;[MapFile]&quot;</command>
-<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
-<command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -deluxe -patchshadows -randomsamples -samples 4 -fast -fastbounce -dirty -bouncegrid -fill -bounce 8 -dirtscale 2 &quot;[MapFile]&quot;</command>
-<command>[q3map2] -minimap &quot;[MapFile]&quot;</command>
+<build name="Final: -bounce 8 -dirty -bouncescale 2 (both)">
+  <command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
+  <command>[q3map2] -vis -saveprt "[MapFile]"</command>
+  <command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -fastallocate -deluxe -patchshadows -samples 4 -randomsamples -bounce 8 -bouncescale 2 -fastbounce -bouncegrid -nobouncestore -dirty -dirtdepth 64 -dirtscale 0.8 -fill "[MapFile]"</command>
 </build>
 <separator/>
-<build name="convert to .OBJ">
-<command>[q3map2] -bsp -meta -keeplights -patchmeta &quot;[MapFile]&quot;</command>
-<command>[q3map2] -convert -format obj &quot;[BspFile]&quot;</command>
-</build>
-<build name="convert to .OBJ (quick and dirty)">
-<command>[q3map2] -convert -format obj -patchmeta -readmap &quot;[MapFile]&quot;</command>
+<build name="Create minimap from .bsp">
+  <command>[q3map2] -minimap &quot;[MapFile]&quot;</command>
 </build>
 <separator/>
-<build name="convert to .ASE for modelling apps">
-<command>[q3map2] -bsp -meta -keeplights -patchmeta &quot;[MapFile]&quot;</command>
-<command>[q3map2] -convert -format ase &quot;[BspFile]&quot;</command>
+<build name="Update entities in the .bsp">
+  <command>[q3map2] -onlyents &quot;[MapFile]&quot;</command>
 </build>
-<build name="convert to .ASE for mapping">
-<command>[q3map2] -bsp -meta -keeplights -patchmeta &quot;[MapFile]&quot;</command>
-<command>[q3map2] -convert -format ase -shadersasbitmap &quot;[BspFile]&quot;</command>
-</build>
-<build name="convert to .ASE for modelling apps (quick and dirty)">
-<command>[q3map2] -convert -format ase -patchmeta -readmap &quot;[MapFile]&quot;</command>
-</build>
-<build name="convert to .ASE for mapping (quick and dirty)">
-<command>[q3map2] -convert -format ase -patchmeta -shadersasbitmap -readmap &quot;[MapFile]&quot;</command>
+<build name="Export entities from .bsp">
+   <command>[q3map2] -exportents "[MapFile]"</command>
 </build>
 <separator/>
-<build name="Single/Legacy: -light -nosRGB medium (OLD LIGHTING)">
-<command>[q3map2] -light -nosRGB -fast &quot;[MapFile]&quot;</command>
+<build name="Convert .map to .obj model">
+  <command>[q3map2] -convert -format obj -patchmeta -readmap "[MapFile]"</command>
 </build>
-<build name="Test/Legacy: -bsp, -vis, -light -nosRGB medium (OLD LIGHTING)">
-<command>[q3map2] -bsp -meta -keeplights -nosRGB -v &quot;[MapFile]&quot;</command>
-<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
-<command>[q3map2] -light -nosRGB -fast &quot;[MapFile]&quot;</command>
+<build name="Convert .map to .obj model: -subdivisions 4 (more tris)">
+  <command>[q3map2] -convert -format obj -patchmeta -subdivisions 4 -readmap "[MapFile]"</command>
 </build>
-<build name="Legacy: -nosRGB (OLD LIGHTING)">
-<command>[q3map2] -bsp -meta -keeplights -nosRGB -maxarea -samplesize 8 -mv 1000000 -mi 6000000 &quot;[MapFile]&quot;</command>
-<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
-<command>[q3map2] -light -nosRGB -lightmapsize 1024 -lightmapsearchpower 4 -deluxe -patchshadows -randomsamples -samples 4 -fast -dirty -fill &quot;[MapFile]&quot;</command>
-<command>[q3map2] -minimap &quot;[MapFile]&quot;</command>
+<build name="Convert .map to .ase model">
+  <command>[q3map2] -convert -format ase -patchmeta -readmap "[MapFile]"</command>
 </build>
-<build name="Legacy: -nosRGB -light -dirtscale 2 (OLD LIGHTING)">
-<command>[q3map2] -bsp -meta -keeplights -nosRGB -maxarea -samplesize 8 -mv 1000000 -mi 6000000 &quot;[MapFile]&quot;</command>
-<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
-<command>[q3map2] -light -nosRGB -lightmapsize 1024 -lightmapsearchpower 4 -deluxe -patchshadows -randomsamples -samples 4 -fast -dirty -fill -dirtscale 2 &quot;[MapFile]&quot;</command>
-<command>[q3map2] -minimap &quot;[MapFile]&quot;</command>
+<build name="Convert .map to .ase model: -subdivisions 4 (more tris)">
+  <command>[q3map2] -convert -format ase -patchmeta -subdivisions 4 -readmap "[MapFile]"</command>
 </build>
-<build name="Legacy: -nosRGB -light -bounce 8 (OLD LIGHTING)">
-<command>[q3map2] -bsp -meta -keeplights -nosRGB -maxarea -samplesize 8 -mv 1000000 -mi 6000000 &quot;[MapFile]&quot;</command>
-<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
-<command>[q3map2] -light -nosRGB -lightmapsize 1024 -lightmapsearchpower 4 -deluxe -patchshadows -randomsamples -samples 4 -fast -fastbounce -dirty -bouncegrid -fill -bounce 8 &quot;[MapFile]&quot;</command>
-<command>[q3map2] -minimap &quot;[MapFile]&quot;</command>
+<separator/>
+<build name="Compile &amp; convert .bsp to .obj model (optimized)">
+  <command>[q3map2] -meta -patchmeta "[MapFile]"</command>
+  <command>[q3map2] -convert -format obj "[BspFile]"</command>
 </build>
-<build name="Legacy: -nosRGB -light -bounce 8 -dirtscale 2 (OLD LIGHTING)">
-<command>[q3map2] -bsp -meta -keeplights -nosRGB -maxarea -samplesize 8 -mv 1000000 -mi 6000000 &quot;[MapFile]&quot;</command>
-<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
-<command>[q3map2] -light -nosRGB -lightmapsize 1024 -lightmapsearchpower 4 -deluxe -patchshadows -randomsamples -samples 4 -fast -fastbounce -dirty -bouncegrid -fill -bounce 8 -dirtscale 2 &quot;[MapFile]&quot;</command>
-<command>[q3map2] -minimap &quot;[MapFile]&quot;</command>
+<build name="Compile &amp; convert .bsp to .obj model: -subdivisions 4 (optimized, more tris)">
+  <command>[q3map2] -meta -patchmeta -subdivisions 4 "[MapFile]"</command>
+  <command>[q3map2] -convert -format obj "[BspFile]"</command>
+</build>
+<build name="Compile &amp; convert .bsp to .ase model (optimized)">
+  <command>[q3map2] -meta -patchmeta "[MapFile]"</command>
+  <command>[q3map2] -convert -format ase "[BspFile]"</command>
+</build>
+<build name="Compile &amp; convert .bsp to .ase model: -subdivisions 4 (optimized, more tris)">
+  <command>[q3map2] -meta -patchmeta -subdivisions 4 "[MapFile]"</command>
+  <command>[q3map2] -convert -format ase "[BspFile]"</command>
 </build>
 </project>
