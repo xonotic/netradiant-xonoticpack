@@ -2,7 +2,7 @@
 <project version="2.0">
 <var name="q3map2">&quot;[RadiantPath]q3map2.[ExecutableType]&quot; [ExtraQ3map2Args] -v<cond value="[MonitorAddress]"> -connect [MonitorAddress]</cond> -game xonotic -fs_basepath &quot;[EnginePath]&quot; -fs_homepath &quot;[UserEnginePath]&quot;<cond value="[GameName]"> -fs_game [GameName]</cond></var>
 <build name="Single: -bsp (for testing layout only)">
-  <command>[q3map2] -bsp -meta -keeplights &quot;[MapFile]&quot;</command>
+  <command>[q3map2] -bsp -meta -fastmeta -keeplights &quot;[MapFile]&quot;</command>
 </build>
 <separator/>
 <build name="Fast: -vis -fast (use when vis takes ages)">
