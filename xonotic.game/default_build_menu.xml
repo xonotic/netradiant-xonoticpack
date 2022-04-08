@@ -21,26 +21,26 @@
   <command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -fastallocate -deluxe -patchshadows -samples 4 -randomsamples -fill "[MapFile]"</command>
 </build>
 <separator/>
-<build name="Final: -bounce 8 (new Xonotic's default)">
-  <command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
-  <command>[q3map2] -vis -saveprt "[MapFile]"</command>
-  <command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -fastallocate -deluxe -patchshadows -samples 4 -randomsamples -bounce 8 -fastbounce -bouncegrid -nobouncestore -fill "[MapFile]"</command>
-</build>
-<separator/>
-<build name="Final: -bounce 8 -dirty (darker corners)">
+<build name="Final: -bounce 8 -dirty (new Xonotic's default)">
   <command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
   <command>[q3map2] -vis -saveprt "[MapFile]"</command>
   <command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -fastallocate -deluxe -patchshadows -samples 4 -randomsamples -bounce 8 -fastbounce -bouncegrid -nobouncestore -dirty -dirtdepth 64 -dirtscale 0.8 -fill "[MapFile]"</command>
 </build>
-<build name="Final: -bounce 8 -bouncescale 2 (more bounced light)">
+<separator/>
+<build name="Final: -bounce 8 (no darker corners)">
   <command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
   <command>[q3map2] -vis -saveprt "[MapFile]"</command>
-  <command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -fastallocate -deluxe -patchshadows -samples 4 -randomsamples -bounce 8 -bouncescale 2 -fastbounce -bouncegrid -nobouncestore -fill "[MapFile]"</command>
+  <command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -fastallocate -deluxe -patchshadows -samples 4 -randomsamples -bounce 8 -fastbounce -bouncegrid -nobouncestore -fill "[MapFile]"</command>
 </build>
-<build name="Final: -bounce 8 -dirty -bouncescale 2 (both)">
+<build name="Final: -bounce 8 -bouncescale 2 -dirty (more bounced light)">
   <command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
   <command>[q3map2] -vis -saveprt "[MapFile]"</command>
   <command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -fastallocate -deluxe -patchshadows -samples 4 -randomsamples -bounce 8 -bouncescale 2 -fastbounce -bouncegrid -nobouncestore -dirty -dirtdepth 64 -dirtscale 0.8 -fill "[MapFile]"</command>
+</build>
+<build name="Final: -bounce 8 -bouncescale 2 (more bounced light, no darker corner)">
+  <command>[q3map2] -bsp -meta -keeplights -maxarea -samplesize 8 -mv 1000000 -mi 6000000 "[MapFile]"</command>
+  <command>[q3map2] -vis -saveprt "[MapFile]"</command>
+  <command>[q3map2] -light -lightmapsize 1024 -lightmapsearchpower 4 -fastallocate -deluxe -patchshadows -samples 4 -randomsamples -bounce 8 -bouncescale 2 -fastbounce -bouncegrid -nobouncestore -fill "[MapFile]"</command>
 </build>
 <separator/>
 <build name="Create minimap from .bsp">
