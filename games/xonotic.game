@@ -19,6 +19,7 @@
   texturetypes="tga jpg png dds"
   modeltypes="md3 mdl md2 ase obj"
   maptypes="mapq3"
+  soundtypes="ogg wav"
   shaders="quake3"
   entityclass="quake3"
   entityclasstype="xml"
